@@ -20,6 +20,10 @@ namespace Models
         public string Password { get; set; }
         public bool IsActive { get; set; }
         public string Language { get; set; }
+        public string PictureProfile { get; set; }
+
+        public int RoleId { get; set; }
+        public Role Role { get; set; }
 
     }
 }

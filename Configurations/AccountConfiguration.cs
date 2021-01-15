@@ -20,12 +20,17 @@ namespace Configurations
             builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
 
             //one-to-many relation 
-            //builder.HasOne<Tenant>(t => t.Tenant).WithMany(c => c.Users).HasForeignKey(t => t.TenantId);
+            builder.HasOne<Role>(t => t.Role).WithMany(c => c.Accounts).HasForeignKey(t => t.RoleId);
 
 
             //relationship  many- to-many
             //builder.HasMany(t => t.Departments).WithMany(c => c.Users)
             //                     .UsingEntity(t => t.ToTable("UsersDepartments"));
+
+            //relationship  one- to-one
+            //builder.HasOne<StudentAddress>(s => s.Address)
+            //.WithOne(ad => ad.Student)
+            //.HasForeignKey<StudentAddress>(ad => ad.AddressOfStudentId);
 
             //seed Data
             //builder.HasData

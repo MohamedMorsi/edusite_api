@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using edusite_api.Data;
 
 namespace edusite_api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210115070347_AddMainClasses")]
+    partial class AddMainClasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,7 +73,7 @@ namespace edusite_api.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 374, DateTimeKind.Local).AddTicks(1330));
+                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 3, 47, 261, DateTimeKind.Local).AddTicks(7167));
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime(6)");
@@ -129,7 +131,7 @@ namespace edusite_api.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 382, DateTimeKind.Local).AddTicks(47));
+                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 3, 47, 274, DateTimeKind.Local).AddTicks(2583));
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime(6)");
@@ -142,24 +144,6 @@ namespace edusite_api.Migrations
                     b.HasIndex("GradeId");
 
                     b.ToTable("Courses");
-
-                    b.HasData(
-                        new
-                        {
-                            CourseId = 1,
-                            CourseName = "مادة الرياضيات 1",
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeId = 1
-                        },
-                        new
-                        {
-                            CourseId = 2,
-                            CourseName = "مادة الرياضيات 2",
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeId = 2
-                        });
                 });
 
             modelBuilder.Entity("Models.Grade", b =>
@@ -171,7 +155,7 @@ namespace edusite_api.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 380, DateTimeKind.Local).AddTicks(9169));
+                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 3, 47, 274, DateTimeKind.Local).AddTicks(8736));
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime(6)");
@@ -182,29 +166,6 @@ namespace edusite_api.Migrations
                     b.HasKey("GradeId");
 
                     b.ToTable("Grades");
-
-                    b.HasData(
-                        new
-                        {
-                            GradeId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeName = "الصف الأول الثانوى"
-                        },
-                        new
-                        {
-                            GradeId = 2,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeName = "الصف الثانى الثانوى"
-                        },
-                        new
-                        {
-                            GradeId = 3,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeName = "الصف الثالث الثانوى"
-                        });
                 });
 
             modelBuilder.Entity("Models.Role", b =>
@@ -216,7 +177,7 @@ namespace edusite_api.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 379, DateTimeKind.Local).AddTicks(2062));
+                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 3, 47, 266, DateTimeKind.Local).AddTicks(9360));
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime(6)");
@@ -265,7 +226,7 @@ namespace edusite_api.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 387, DateTimeKind.Local).AddTicks(3474));
+                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 3, 47, 273, DateTimeKind.Local).AddTicks(994));
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime(6)");
@@ -319,7 +280,7 @@ namespace edusite_api.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 383, DateTimeKind.Local).AddTicks(5119));
+                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 3, 47, 269, DateTimeKind.Local).AddTicks(1703));
 
                     b.Property<DateTime>("ExpiryDate")
                         .HasColumnType("datetime(6)");

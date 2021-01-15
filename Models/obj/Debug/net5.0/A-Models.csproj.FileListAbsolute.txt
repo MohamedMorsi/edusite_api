@@ -12,3 +12,4 @@ D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.dll
 D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\ref\A-Models.dll
 D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.pdb
 D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.genruntimeconfig.cache
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.csprojAssemblyReference.cache
