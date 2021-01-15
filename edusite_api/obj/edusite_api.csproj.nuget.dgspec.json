@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\New folder\\edusite\\edusite_api\\Auth_API\\edusite_api.csproj": {}
+    "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj": {}
   },
   "projects": {
-    "D:\\New folder\\edusite\\edusite_api\\Auth_API\\edusite_api.csproj": {
+    "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\Auth_API\\edusite_api.csproj",
+        "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj",
         "projectName": "edusite_api",
-        "projectPath": "D:\\New folder\\edusite\\edusite_api\\Auth_API\\edusite_api.csproj",
+        "projectPath": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj",
         "packagesPath": "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\",
-        "outputPath": "D:\\New folder\\edusite\\edusite_api\\Auth_API\\obj\\",
+        "outputPath": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

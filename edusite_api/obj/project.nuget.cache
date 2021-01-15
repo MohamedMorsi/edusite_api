@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lY/qtHbcpJYCbnn//sR4lneWGh+4714pEg7r5H/DZoFk/+/D7+LXgm3QJDhpqnQd+f6mFTQS4+LxgvdsWd9NyQ==",
+  "dgSpecHash": "sOmpKKwGYwTirttCgtN8KIC9azcT9hlx5WzZBvycGKRQbZTxxFW2cIItCloArm6UeXRXasvPIZZx50gm3ZvfUQ==",
   "success": true,
-  "projectFilePath": "D:\\New folder\\edusite\\edusite_api\\Auth_API\\edusite_api.csproj",
+  "projectFilePath": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
