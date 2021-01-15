@@ -40,7 +40,7 @@ namespace Auth_API
         {
             //connection strings conect context with connection string 
             //for mysql 
-            string mySqlConnectionStr = Configuration.GetConnectionString("MasterConnectionString");
+            string mySqlConnectionStr = Configuration.GetConnectionString("DBConnectionString");
             services.AddDbContextPool<DataContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
 
             //for sqlserver   install Microsoft.EntityFrameworkCore.SqlServer
