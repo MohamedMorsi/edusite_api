@@ -1,0 +1,28 @@
+AutoMapper.Extensions.Microsoft.DependencyInjection
+Microsoft.AspNetCore.Authentication.JwtBearer
+Microsoft.AspNetCore.Authentication.OpenIdConnect
+Microsoft.AspNetCore.JsonPatch
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Relational
+Microsoft.EntityFrameworkCore.Tools
+MySql.Data
+MySql.Data.EntityFrameworkCore
+MySqlConnector
+Newtonsoft.Json
+Pomelo.EntityFrameworkCore.MySql
+Pomelo.EntityFrameworkCore.MySql.Design
+Pomelo.EntityFrameworkCore.MySql -Version 5.0.0-alpha.2
+Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+
+Pomelo.EntityFrameworkCore.MySql
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.SqlServer
+
+
+Add-Migration name
+To undo this action, use Remove-Migration
+
+Update-Database
+
