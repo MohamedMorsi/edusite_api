@@ -2,12 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Auth_API.Data;
-using Auth_API.Data.Contract;
-using Auth_API.Data.Repository;
-using Auth_API.Services;
-using Auth_API.Services.Contract;
-using Auth_API.Setting;
+using edusite_api.Data;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -23,6 +18,11 @@ using Microsoft.OpenApi.Models;
 using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Storage;
 using Swashbuckle.Swagger;
+using edusite_api.Setting;
+using edusite_api.Services.Contract;
+using edusite_api.Services;
+using edusite_api.Repository;
+using edusite_api.Data.Contract;
 
 namespace Auth_API
 {
@@ -53,20 +53,12 @@ namespace Auth_API
             services.AddControllers();
             services.AddControllers().AddNewtonsoftJson();
 
-
-            //Mocks
-            //services.AddScoped<IStudentRepo,MockStudentRepo>();
-
             //Services
             services.AddScoped<ILoginService, LoginService>();
             services.AddSingleton<ITokenService, TokenService>();
 
             //Repositories
-            services.AddScoped<IUserRepo, UserRepo>();
-            services.AddScoped<ITenantRepo, TenantRepo>();
-            services.AddScoped<IDepartmentRepo, DepartmentRepo>();
-            services.AddScoped<IPermissionRepo, PermissionRepo>();
-            services.AddScoped<ICurrentActiveUserRepo, CurrentActiveUserRepo>();
+            services.AddScoped<IAccountRepo, AccountRepo>();
 
             //Microsoft.AspNetCore.Mvc.NewtonsoftJson  ===== to possible object cycle was detected which is not supported
             services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

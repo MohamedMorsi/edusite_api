@@ -25,7 +25,10 @@
     ".NETCoreApp,Version=v5.0": {
       "edusite_api/1.0.0": {
         "dependencies": {
+          "A-Models": "1.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "B-Configurations": "1.0.0",
+          "C-Dtos": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": "5.0.1",
           "Microsoft.AspNetCore.JsonPatch": "5.0.1",
@@ -1784,6 +1787,54 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
+        }
+      },
+      "A-Models/1.0.0": {
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.1",
+          "MySql.Data": "8.0.22",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2",
+          "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
+        },
+        "runtime": {
+          "A-Models.dll": {}
+        },
+        "compile": {
+          "A-Models.dll": {}
+        }
+      },
+      "B-Configurations/1.0.0": {
+        "dependencies": {
+          "A-Models": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.1",
+          "MySql.Data": "8.0.22",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2",
+          "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
+        },
+        "runtime": {
+          "B-Configurations.dll": {}
+        },
+        "compile": {
+          "B-Configurations.dll": {}
+        }
+      },
+      "C-Dtos/1.0.0": {
+        "dependencies": {
+          "A-Models": "1.0.0"
+        },
+        "runtime": {
+          "C-Dtos.dll": {}
+        },
+        "compile": {
+          "C-Dtos.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -4514,6 +4565,21 @@
       "sha512": "sha512-Zm2BdeanuncYs3NhCj4c9e1x3EXFzFBVv2wPEc/Dj4ZbI9R8ecLSR5frAsx4zJCPBtKQreQ7Q/KxJEohJZbfzA==",
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
+    },
+    "A-Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "B-Configurations/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "C-Dtos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",

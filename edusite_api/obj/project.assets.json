@@ -2202,6 +2202,69 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "A-Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.1",
+          "MySql.Data": "8.0.22",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2",
+          "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
+        },
+        "compile": {
+          "bin/placeholder/A-Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/A-Models.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "B-Configurations/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "A-Models": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.1",
+          "Microsoft.EntityFrameworkCore": "5.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "5.0.1",
+          "MySql.Data": "8.0.22",
+          "MySql.Data.EntityFrameworkCore": "8.0.22",
+          "Pomelo.EntityFrameworkCore.MySql": "5.0.0-alpha.2",
+          "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
+        },
+        "compile": {
+          "bin/placeholder/B-Configurations.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/B-Configurations.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "C-Dtos/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "A-Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/C-Dtos.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/C-Dtos.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -7337,11 +7400,29 @@
         "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "A-Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/A-Models.csproj",
+      "msbuildProject": "../Models/A-Models.csproj"
+    },
+    "B-Configurations/1.0.0": {
+      "type": "project",
+      "path": "../Configurations/B-Configurations.csproj",
+      "msbuildProject": "../Configurations/B-Configurations.csproj"
+    },
+    "C-Dtos/1.0.0": {
+      "type": "project",
+      "path": "../Dtos/C-Dtos.csproj",
+      "msbuildProject": "../Dtos/C-Dtos.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "A-Models >= 1.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.0",
+      "B-Configurations >= 1.0.0",
+      "C-Dtos >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.1",
       "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 5.0.1",
       "Microsoft.AspNetCore.JsonPatch >= 5.0.1",
@@ -7389,7 +7470,17 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\New folder\\edusite\\edusite_api\\Configurations\\B-Configurations.csproj": {
+              "projectPath": "D:\\New folder\\edusite\\edusite_api\\Configurations\\B-Configurations.csproj"
+            },
+            "D:\\New folder\\edusite\\edusite_api\\Dtos\\C-Dtos.csproj": {
+              "projectPath": "D:\\New folder\\edusite\\edusite_api\\Dtos\\C-Dtos.csproj"
+            },
+            "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj": {
+              "projectPath": "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

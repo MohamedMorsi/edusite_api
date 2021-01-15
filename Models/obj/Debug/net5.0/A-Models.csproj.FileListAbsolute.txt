@@ -1,0 +1,14 @@
+D:\New folder\edusite\edusite_api\Models\bin\Debug\net5.0\A-Models.deps.json
+D:\New folder\edusite\edusite_api\Models\bin\Debug\net5.0\A-Models.runtimeconfig.json
+D:\New folder\edusite\edusite_api\Models\bin\Debug\net5.0\A-Models.runtimeconfig.dev.json
+D:\New folder\edusite\edusite_api\Models\bin\Debug\net5.0\A-Models.dll
+D:\New folder\edusite\edusite_api\Models\bin\Debug\net5.0\ref\A-Models.dll
+D:\New folder\edusite\edusite_api\Models\bin\Debug\net5.0\A-Models.pdb
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.AssemblyInfoInputs.cache
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.AssemblyInfo.cs
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.csproj.CoreCompileInputs.cache
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.dll
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\ref\A-Models.dll
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.pdb
+D:\New folder\edusite\edusite_api\Models\obj\Debug\net5.0\A-Models.genruntimeconfig.cache

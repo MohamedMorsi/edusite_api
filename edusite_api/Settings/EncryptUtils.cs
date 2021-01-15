@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Auth_API.Setting
+namespace edusite_api.Setting
 {
     public class EncryptUtils
     {

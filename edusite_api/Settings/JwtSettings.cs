@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 
-namespace Auth_API.Setting
+namespace edusite_api.Setting
 {
     public class JwtSettings
     {

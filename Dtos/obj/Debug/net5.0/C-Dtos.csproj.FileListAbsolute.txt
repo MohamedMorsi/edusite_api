@@ -1,0 +1,15 @@
+D:\New folder\edusite\edusite_api\Dtos\bin\Debug\net5.0\C-Dtos.deps.json
+D:\New folder\edusite\edusite_api\Dtos\bin\Debug\net5.0\C-Dtos.dll
+D:\New folder\edusite\edusite_api\Dtos\bin\Debug\net5.0\ref\C-Dtos.dll
+D:\New folder\edusite\edusite_api\Dtos\bin\Debug\net5.0\C-Dtos.pdb
+D:\New folder\edusite\edusite_api\Dtos\bin\Debug\net5.0\A-Models.dll
+D:\New folder\edusite\edusite_api\Dtos\bin\Debug\net5.0\A-Models.pdb
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.csprojAssemblyReference.cache
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.AssemblyInfoInputs.cache
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.AssemblyInfo.cs
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.csproj.CoreCompileInputs.cache
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.csproj.CopyComplete
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.dll
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\ref\C-Dtos.dll
+D:\New folder\edusite\edusite_api\Dtos\obj\Debug\net5.0\C-Dtos.pdb
