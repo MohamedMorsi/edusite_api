@@ -20,7 +20,7 @@ namespace Configurations
             builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
 
             //one-to-many relation 
-            builder.HasOne<Role>(t => t.Role).WithMany(c => c.Accounts).HasForeignKey(t => t.RoleId);
+            //builder.HasOne<Role>(t => t.Role).WithMany(c => c.Accounts).HasForeignKey(t => t.RoleId);
 
 
             //relationship  many- to-many

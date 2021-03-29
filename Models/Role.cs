@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Models
 {
-    public class Role : BaseModel
+    public class Role : IdentityRole
     {
-        public Role()
-        {
-            Accounts = new List<Account>();
-        }
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
-        public virtual ICollection<Account> Accounts { get; set; }
+        //public Role()
+        //{
+        //    Users = new List<User>();
+        //}
+
+
+        ///// ////////////////////////////////////////////////////////////////////
+        //public List<User> Users { get; set; }
     }
 }

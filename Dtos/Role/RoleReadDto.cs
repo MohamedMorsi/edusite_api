@@ -7,10 +7,8 @@ namespace Dtos.Role
 {
     public class RoleReadDto
     {
-        public RoleReadDto()
-        {
-        }
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public Guid Id { get; set; }
+
+        public string Name { get; set; }
     }
 }

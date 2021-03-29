@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "edusite_api", "edusite_api\edusite_api.csproj", "{186502D1-B6F1-44FE-8FB4-B591DB4B20FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Models", "Models\A-Models.csproj", "{94F9ED86-6EDB-4406-9C59-16B9767517C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{94F9ED86-6EDB-4406-9C59-16B9767517C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B-Configurations", "Configurations\B-Configurations.csproj", "{F5BD4AE2-41A0-4E2E-9E7E-931DBE95FEE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configurations", "Configurations\Configurations.csproj", "{F5BD4AE2-41A0-4E2E-9E7E-931DBE95FEE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C-Dtos", "Dtos\C-Dtos.csproj", "{00D876F9-F781-4306-9D9E-C8E81BE6D409}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dtos", "Dtos\Dtos.csproj", "{00D876F9-F781-4306-9D9E-C8E81BE6D409}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

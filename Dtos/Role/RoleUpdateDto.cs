@@ -7,10 +7,7 @@ namespace Dtos.Role
 {
     public class RoleUpdateDto
     {
-        public RoleUpdateDto()
-        {
-        }
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+
+
     }
 }

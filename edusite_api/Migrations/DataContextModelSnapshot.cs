@@ -17,463 +17,305 @@ namespace edusite_api.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
-            modelBuilder.Entity("CourseStudent", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
-                    b.Property<int>("CoursesCourseId")
-                        .HasColumnType("int");
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
 
-                    b.Property<int>("StudentsStudentId")
-                        .HasColumnType("int");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasKey("CoursesCourseId", "StudentsStudentId");
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.HasIndex("StudentsStudentId");
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
 
-                    b.ToTable("StudentsCourses");
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("Roles");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityRole");
                 });
 
-            modelBuilder.Entity("CourseTeacher", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.Property<int>("CoursesCourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeachersTeacherId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CoursesCourseId", "TeachersTeacherId");
-
-                    b.HasIndex("TeachersTeacherId");
-
-                    b.ToTable("TeachersCourses");
-                });
-
-            modelBuilder.Entity("GradeTeacher", b =>
-                {
-                    b.Property<int>("GradesGradeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeachersTeacherId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GradesGradeId", "TeachersTeacherId");
-
-                    b.HasIndex("TeachersTeacherId");
-
-                    b.ToTable("TeachersGrades");
-                });
-
-            modelBuilder.Entity("Models.Account", b =>
-                {
-                    b.Property<int>("AccountId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 374, DateTimeKind.Local).AddTicks(1330));
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("UserTokens");
+                });
+
+            modelBuilder.Entity("Models.User", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255) CHARACTER SET utf8mb4");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
 
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint(1)")
                         .HasDefaultValue(true);
 
-                    b.Property<string>("Language")
-                        .IsRequired()
+                    b.Property<int>("LanguageId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4")
-                        .HasDefaultValue("en");
+                        .HasColumnType("int")
+                        .HasDefaultValue(1);
 
                     b.Property<string>("LastName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Password")
                         .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
+
+                    b.Property<string>("PasswordHash")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<string>("PictureProfile")
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("tinyint(1)");
 
-                    b.Property<string>("UserEmail")
+                    b.Property<string>("SecurityStamp")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256) CHARACTER SET utf8mb4");
 
-                    b.HasKey("AccountId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
 
-                    b.ToTable("Accounts");
-                });
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
 
-            modelBuilder.Entity("Models.Course", b =>
-                {
-                    b.Property<int>("CourseId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("CourseName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 382, DateTimeKind.Local).AddTicks(47));
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("GradeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CourseId");
-
-                    b.HasIndex("GradeId");
-
-                    b.ToTable("Courses");
-
-                    b.HasData(
-                        new
-                        {
-                            CourseId = 1,
-                            CourseName = "مادة الرياضيات 1",
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeId = 1
-                        },
-                        new
-                        {
-                            CourseId = 2,
-                            CourseName = "مادة الرياضيات 2",
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeId = 2
-                        });
-                });
-
-            modelBuilder.Entity("Models.Grade", b =>
-                {
-                    b.Property<int>("GradeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 380, DateTimeKind.Local).AddTicks(9169));
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("GradeName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("GradeId");
-
-                    b.ToTable("Grades");
-
-                    b.HasData(
-                        new
-                        {
-                            GradeId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeName = "الصف الأول الثانوى"
-                        },
-                        new
-                        {
-                            GradeId = 2,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeName = "الصف الثانى الثانوى"
-                        },
-                        new
-                        {
-                            GradeId = 3,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            GradeName = "الصف الثالث الثانوى"
-                        });
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Models.Role", b =>
                 {
-                    b.Property<int>("RoleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 379, DateTimeKind.Local).AddTicks(2062));
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("RoleName")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("RoleId");
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityRole");
 
                     b.ToTable("Roles");
+
+                    b.HasDiscriminator().HasValue("Role");
 
                     b.HasData(
                         new
                         {
-                            RoleId = 1,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoleName = "Admin"
+                            Id = "62e4d04f-735f-4575-a23f-5e32439959fe",
+                            ConcurrencyStamp = "0e6de312-b570-4957-a994-74a7d042d1fb",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            RoleId = 2,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoleName = "Teacher"
+                            Id = "f525fa1e-bd78-4b00-b015-1bc4deab7751",
+                            ConcurrencyStamp = "fdeb3739-def0-4c64-b540-8e97af282f83",
+                            Name = "Teacher",
+                            NormalizedName = "TEACHER"
                         },
                         new
                         {
-                            RoleId = 3,
-                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ExpiryDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            RoleName = "Student"
+                            Id = "b3e794e4-893b-45a0-97e8-9e1a5ff80246",
+                            ConcurrencyStamp = "910f35e2-982e-40bc-ae97-2a3b5bc5291a",
+                            Name = "Student",
+                            NormalizedName = "STUDENT"
                         });
                 });
 
-            modelBuilder.Entity("Models.Student", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
-                    b.Property<int>("StudentId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 387, DateTimeKind.Local).AddTicks(3474));
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<int>("GradeId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("MobilePhone")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("MobilePhone2")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("PictureProfile")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("UserEmail")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("StudentId");
-
-                    b.HasIndex("GradeId");
-
-                    b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("Models.Teacher", b =>
-                {
-                    b.Property<int>("TeacherId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime(6)")
-                        .HasDefaultValue(new DateTime(2021, 1, 15, 9, 19, 26, 383, DateTimeKind.Local).AddTicks(5119));
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("MobilePhone")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("MobilePhone2")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("PictureProfile")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("UserEmail")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("TeacherId");
-
-                    b.ToTable("Teachers");
-                });
-
-            modelBuilder.Entity("StudentTeacher", b =>
-                {
-                    b.Property<int>("StudentsStudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeachersTeacherId")
-                        .HasColumnType("int");
-
-                    b.HasKey("StudentsStudentId", "TeachersTeacherId");
-
-                    b.HasIndex("TeachersTeacherId");
-
-                    b.ToTable("TeachersStudents");
-                });
-
-            modelBuilder.Entity("CourseStudent", b =>
-                {
-                    b.HasOne("Models.Course", null)
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
-                        .HasForeignKey("CoursesCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Models.Student", null)
-                        .WithMany()
-                        .HasForeignKey("StudentsStudentId")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CourseTeacher", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Models.Course", null)
+                    b.HasOne("Models.User", null)
                         .WithMany()
-                        .HasForeignKey("CoursesCourseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Models.Teacher", null)
-                        .WithMany()
-                        .HasForeignKey("TeachersTeacherId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("GradeTeacher", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Models.Grade", null)
+                    b.HasOne("Models.User", null)
                         .WithMany()
-                        .HasForeignKey("GradesGradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Models.Teacher", null)
-                        .WithMany()
-                        .HasForeignKey("TeachersTeacherId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Models.Account", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.HasOne("Models.Role", "Role")
-                        .WithMany("Accounts")
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("Models.Course", b =>
-                {
-                    b.HasOne("Models.Grade", "Grade")
-                        .WithMany("Courses")
-                        .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Grade");
-                });
-
-            modelBuilder.Entity("Models.Student", b =>
-                {
-                    b.HasOne("Models.Grade", "Grade")
-                        .WithMany("Students")
-                        .HasForeignKey("GradeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Grade");
-                });
-
-            modelBuilder.Entity("StudentTeacher", b =>
-                {
-                    b.HasOne("Models.Student", null)
+                    b.HasOne("Models.User", null)
                         .WithMany()
-                        .HasForeignKey("StudentsStudentId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
 
-                    b.HasOne("Models.Teacher", null)
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Models.User", null)
                         .WithMany()
-                        .HasForeignKey("TeachersTeacherId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Models.Grade", b =>
-                {
-                    b.Navigation("Courses");
-
-                    b.Navigation("Students");
-                });
-
-            modelBuilder.Entity("Models.Role", b =>
-                {
-                    b.Navigation("Accounts");
                 });
 #pragma warning restore 612, 618
         }

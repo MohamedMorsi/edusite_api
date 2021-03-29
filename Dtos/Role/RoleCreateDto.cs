@@ -7,10 +7,10 @@ namespace Dtos.Role
 {
     public class RoleCreateDto
     {
-        public RoleCreateDto()
-        {
-        }
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
+        public Guid RoleId { get; set; }
+
+        public string Name { get; set; }
+
+
     }
 }

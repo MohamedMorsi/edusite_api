@@ -5,17 +5,48 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repository\AccountRepo.cs" />
+    <Compile Remove="Repository\Contract\IAccountRepo.cs" />
+    <Compile Remove="Repository\Contract\ICourseRepo.cs" />
+    <Compile Remove="Repository\Contract\IGradeRepo.cs" />
+    <Compile Remove="Repository\Contract\IStudentRepo.cs" />
+    <Compile Remove="Repository\Contract\ITeacherRepo.cs" />
+    <Compile Remove="Repository\CourseRepo.cs" />
+    <Compile Remove="Repository\GradeRepo.cs" />
+    <Compile Remove="Repository\StudentRepo.cs" />
+    <Compile Remove="Repository\TeacherRepo.cs" />
+    <Compile Remove="Services\Contract\ILoginService.cs" />
+    <Compile Remove="Services\Contract\ITokenService.cs" />
+    <Compile Remove="Services\LoginService.cs" />
+    <Compile Remove="Services\TokenService.cs" />
+    <Compile Remove="Controllers\AccountsController.cs" />
+    <Compile Remove="Controllers\CoursesController.cs" />
+    <Compile Remove="Controllers\GradesController.cs" />
+    <Compile Remove="Controllers\LoginController.cs" />
+    <Compile Remove="Controllers\StudentsController.cs" />
+    <Compile Remove="Controllers\TeachersController.cs" />
+    <Compile Remove="Settings\EncryptUtils.cs" />
+    <Compile Remove="Settings\JwtSettings.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.1" />
     <PackageReference Include="MySql.Data" Version="8.0.22" />
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
     <PackageReference Include="MySqlConnector" Version="1.1.0" />
@@ -24,12 +55,13 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     <PackageReference Include="Swashbuckle.Core" Version="5.6.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Configurations\B-Configurations.csproj" />
-    <ProjectReference Include="..\Dtos\C-Dtos.csproj" />
-    <ProjectReference Include="..\Models\A-Models.csproj" />
+    <ProjectReference Include="..\Configurations\Configurations.csproj" />
+    <ProjectReference Include="..\Dtos\Dtos.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
 </Project>

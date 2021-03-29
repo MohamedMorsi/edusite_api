@@ -31,8 +31,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj": {
-                "projectPath": "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj"
+              "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj": {
+                "projectPath": "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj"
               }
             }
           }
@@ -64,16 +64,16 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj": {
+    "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj",
-        "projectName": "A-Models",
-        "projectPath": "D:\\New folder\\edusite\\edusite_api\\Models\\A-Models.csproj",
+        "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj",
+        "projectName": "Models",
+        "projectPath": "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\",
         "outputPath": "D:\\New folder\\edusite\\edusite_api\\Models\\obj\\",
         "projectStyle": "PackageReference",
@@ -164,7 +164,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }

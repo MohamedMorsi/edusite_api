@@ -13,29 +13,32 @@ namespace Configurations
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Roles");
-            builder.Property(s => s.RoleName).IsRequired(true);
-            builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
+
 
             //seed Data
             builder.HasData
             (
               new Role
               {
-                  RoleId = 1,
-                  RoleName = "Admin"
+                  Id = "62e4d04f-735f-4575-a23f-5e32439959fe",
+                  Name = "Admin",
+                  NormalizedName = "Admin".ToUpper(),
+                  ConcurrencyStamp = "0e6de312-b570-4957-a994-74a7d042d1fb",
               },
               new Role
               {
-                  RoleId = 2,
-                  RoleName = "Teacher"
+                  Id = "f525fa1e-bd78-4b00-b015-1bc4deab7751",
+                  Name = "Teacher",
+                  NormalizedName = "Teacher".ToUpper(),
+                  ConcurrencyStamp = "fdeb3739-def0-4c64-b540-8e97af282f83",
               },
               new Role
               {
-                  RoleId = 3,
-                  RoleName = "Student"
+                  Id = "b3e794e4-893b-45a0-97e8-9e1a5ff80246",
+                  Name = "Student",
+                  NormalizedName = "Student".ToUpper(),
+                  ConcurrencyStamp = "910f35e2-982e-40bc-ae97-2a3b5bc5291a",
               }
-
-
             );
         }
     }

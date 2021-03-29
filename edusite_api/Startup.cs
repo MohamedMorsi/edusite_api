@@ -18,11 +18,13 @@ using Microsoft.OpenApi.Models;
 using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql.Storage;
 using Swashbuckle.Swagger;
-using edusite_api.Setting;
-using edusite_api.Services.Contract;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using edusite_api.Services;
-using edusite_api.Repository;
-using edusite_api.Data.Contract;
+using edusite_api.Services.Contract;
+using edusite_api.Settings;
+using Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Auth_API
 {
@@ -38,6 +40,12 @@ namespace Auth_API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<JWT>(Configuration.GetSection("JWT"));
+
+            services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<DataContext>();
+
+
             //connection strings conect context with connection string 
             //for mysql 
             string mySqlConnectionStr = Configuration.GetConnectionString("DBConnectionString");
@@ -49,26 +57,56 @@ namespace Auth_API
             //Automapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //Controller
-            services.AddControllers();
-            services.AddControllers().AddNewtonsoftJson();
+
+
+            //Cros
+            //for any origin
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+            ////for one orgin
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:3000/"));
+            //});
+
 
             //Services
-            services.AddScoped<ILoginService, LoginService>();
-            services.AddSingleton<ITokenService, TokenService>();
+            services.AddScoped<IAuthService, AuthService>();
+            //services.AddScoped<ILoginService, LoginService>();
+            //services.AddSingleton<ITokenService, TokenService>();
 
             //Repositories
-            services.AddScoped<IAccountRepo, AccountRepo>();
+            //services.AddScoped<IAccountRepo, AccountRepo>();
 
             //Microsoft.AspNetCore.Mvc.NewtonsoftJson  ===== to possible object cycle was detected which is not supported
             services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-            //jwtSettings For Token
-            var jwtSettings = JwtSettings.FromConfiguration(Configuration);
-            services.AddSingleton(jwtSettings);
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options => options.TokenValidationParameters = jwtSettings.TokenValidationParameters);
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(o =>
+                {
+                    o.RequireHttpsMetadata = false;
+                    o.SaveToken = false;
+                    o.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidIssuer = Configuration["JWT:Issuer"],
+                        ValidAudience = Configuration["JWT:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Key"]))
+                    };
+                });
 
+            //Controller
+            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth_API", Version = "v1" });
@@ -78,7 +116,7 @@ namespace Auth_API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DataContext db)
         {
             if (env.IsDevelopment())
             {
@@ -87,12 +125,19 @@ namespace Auth_API
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "Auth_API v1"));  //originally "/swagger/v1/swagger.json"
             }
 
-            app.UseAuthentication();
+            // Creates the database if not exists
+            //db.Database.EnsureCreated(); //without migration
+            db.Database.Migrate(); //with all migration
+
+            //add cros to container
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()); //for any orgin
+            //app.UseCors(options => options.WithOrigins("https://localhost:3000/")); //for only this orgin
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
