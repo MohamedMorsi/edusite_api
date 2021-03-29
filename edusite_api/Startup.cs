@@ -109,7 +109,7 @@ namespace Auth_API
             services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth_API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "edusite_API", Version = "v1" });
                 c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); //This line
             });
 
@@ -122,7 +122,7 @@ namespace Auth_API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "Auth_API v1"));  //originally "/swagger/v1/swagger.json"
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("./v1/swagger.json", "edusite_API v1"));  //originally "/swagger/v1/swagger.json"
             }
 
             // Creates the database if not exists

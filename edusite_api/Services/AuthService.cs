@@ -40,7 +40,9 @@ namespace edusite_api.Services
                 UserName = model.Username,
                 Email = model.Email,
                 FirstName = model.FirstName,
-                LastName = model.LastName
+                LastName = model.LastName,
+                IsActive = true,
+                LanguageId = 1
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
