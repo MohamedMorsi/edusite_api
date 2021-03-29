@@ -5,16 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Course\**" />
-    <Compile Remove="Grade\**" />
     <Compile Remove="Student\**" />
     <Compile Remove="Teacher\**" />
-    <EmbeddedResource Remove="Course\**" />
-    <EmbeddedResource Remove="Grade\**" />
     <EmbeddedResource Remove="Student\**" />
     <EmbeddedResource Remove="Teacher\**" />
-    <None Remove="Course\**" />
-    <None Remove="Grade\**" />
     <None Remove="Student\**" />
     <None Remove="Teacher\**" />
   </ItemGroup>

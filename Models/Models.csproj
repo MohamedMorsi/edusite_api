@@ -6,9 +6,6 @@
 
   <ItemGroup>
     <Compile Remove="Account.cs" />
-    <Compile Remove="BaseModel.cs" />
-    <Compile Remove="Course.cs" />
-    <Compile Remove="Grade.cs" />
     <Compile Remove="Student.cs" />
     <Compile Remove="Teacher.cs" />
   </ItemGroup>

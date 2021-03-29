@@ -1,4 +1,6 @@
 using AutoMapper;
+using Dtos.Course;
+using Dtos.Grade;
 using Dtos.User;
 using Models;
 
@@ -15,6 +17,26 @@ namespace edusite_api.Profiles
             CreateMap<UserUpdateDto, User>();
         }
     }
+    public class CourseProfile : Profile
+    {
+        public CourseProfile()
+        {
+            // createMap< source , destination >();
+            CreateMap<Course, CourseReadDto>();
+            CreateMap<CourseCreateDto, Course>();
+            CreateMap<CourseUpdateDto, Course>();
+        }
+    }
+    public class GradeProfile : Profile
+    {
+        public GradeProfile()
+        {
+            // createMap< source , destination >();
+            CreateMap<Grade, GradeReadDto>();
+            CreateMap<GradeCreateDto, Grade>();
+            CreateMap<GradeUpdateDto, Grade>();
+        }
+    }
 
     //public class RoleProfile : Profile
     //{
@@ -27,16 +49,6 @@ namespace edusite_api.Profiles
     //    }
     //}
 
-    //public class CourseProfile : Profile
-    //{
-    //    public CourseProfile()
-    //    {
-    //        // createMap< source , destination >();
-    //        CreateMap<Course, CourseReadDto>();
-    //        CreateMap<CourseCreateDto, Course>();
-    //        CreateMap<CourseUpdateDto, Course>();
-    //    }
-    //}
 
 
     //public class StudentProfile : Profile
@@ -62,16 +74,6 @@ namespace edusite_api.Profiles
     //    }
     //}
 
-    //public class GradeProfile : Profile
-    //{
-    //    public GradeProfile()
-    //    {
-    //        // createMap< source , destination >();
-    //        CreateMap<Grade, GradeReadDto>();
-    //        CreateMap<GradeCreateDto, Grade>();
-    //        CreateMap<GradeUpdateDto, Grade>();
-    //    }
-    //}
 
 
 }

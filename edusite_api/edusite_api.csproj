@@ -7,12 +7,8 @@
   <ItemGroup>
     <Compile Remove="Repository\AccountRepo.cs" />
     <Compile Remove="Repository\Contract\IAccountRepo.cs" />
-    <Compile Remove="Repository\Contract\ICourseRepo.cs" />
-    <Compile Remove="Repository\Contract\IGradeRepo.cs" />
     <Compile Remove="Repository\Contract\IStudentRepo.cs" />
     <Compile Remove="Repository\Contract\ITeacherRepo.cs" />
-    <Compile Remove="Repository\CourseRepo.cs" />
-    <Compile Remove="Repository\GradeRepo.cs" />
     <Compile Remove="Repository\StudentRepo.cs" />
     <Compile Remove="Repository\TeacherRepo.cs" />
     <Compile Remove="Services\Contract\ILoginService.cs" />
@@ -20,8 +16,6 @@
     <Compile Remove="Services\LoginService.cs" />
     <Compile Remove="Services\TokenService.cs" />
     <Compile Remove="Controllers\AccountsController.cs" />
-    <Compile Remove="Controllers\CoursesController.cs" />
-    <Compile Remove="Controllers\GradesController.cs" />
     <Compile Remove="Controllers\LoginController.cs" />
     <Compile Remove="Controllers\StudentsController.cs" />
     <Compile Remove="Controllers\TeachersController.cs" />

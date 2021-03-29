@@ -11,17 +11,19 @@ namespace Models
     {
         public Course()
         {
-            Students = new List<Student>();
-            Teachers = new List<Teacher>();
+            //Students = new List<User>();
+            //Teachers = new List<User>();
         }
         [Key]
         public int CourseId { get; set; }
         public string CourseName { get; set; }
 
+
+        /// ////////////////////////////////////////////////////////////////////////////////
         public int GradeId { get; set; }
         public Grade Grade { get; set; }
-        public virtual ICollection<Teacher> Teachers { get; set; }
-        public virtual ICollection<Student> Students { get; set; }
+        //public virtual ICollection<User> Teachers { get; set; }
+        //public virtual ICollection<User> Students { get; set; }
 
     }
 }

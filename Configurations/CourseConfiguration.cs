@@ -13,7 +13,7 @@ namespace Configurations
         public void Configure(EntityTypeBuilder<Course> builder)
         {
             builder.ToTable("Courses");
-            builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
+            //builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
 
 
             //one-to-many relation 

@@ -13,7 +13,7 @@ namespace Configurations
         public void Configure(EntityTypeBuilder<Grade> builder)
         {
             builder.ToTable("Grades");
-            builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
+            //builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
 
             //seedData
             builder.HasData(
