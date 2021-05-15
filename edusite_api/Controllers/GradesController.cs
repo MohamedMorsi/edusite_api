@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using Dtos.Grade;
 using edusite_api.Data.Contract;
+using System.Linq;
 
 namespace edusite_api.Controllers
 {
@@ -20,6 +21,7 @@ namespace edusite_api.Controllers
             _mapper = mapper;
         }
 
+
         //Get  api/Grades
         [HttpGet]
         public ActionResult<IEnumerable<GradeReadDto>> GetAllGrades()
@@ -27,6 +29,15 @@ namespace edusite_api.Controllers
             var Grades = _repository.GetAll();
             return Ok(_mapper.Map<IEnumerable<GradeReadDto>>(Grades));
         }
+
+        //Get  api/Grades
+        [HttpGet]
+        public ActionResult<IEnumerable<GradeReadDto>> GetAllActiveGrades()
+        {
+            var Grades = _repository.GetAll().Where(t => t.IsActive == true);
+            return Ok(_mapper.Map<IEnumerable<GradeReadDto>>(Grades));
+        }
+
 
         //Get  api/Grades/5
         [HttpGet("{id}", Name = "GetGradeById")]
@@ -51,7 +62,7 @@ namespace edusite_api.Controllers
 
             var GradeReadDto = _mapper.Map<GradeReadDto>(GradeModel);
 
-            return CreatedAtRoute(nameof(GetGradeById), new { id = GradeReadDto.GradeId }, GradeReadDto);
+            return CreatedAtRoute(nameof(GetGradeById), new { id = GradeReadDto.Id }, GradeReadDto);
         }
 
         //put  api/Grades/5

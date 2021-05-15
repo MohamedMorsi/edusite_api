@@ -24,13 +24,13 @@ namespace Configurations
             builder.HasData(
                     new Course
                     {
-                        CourseId = 1,
+                        Id = 1,
                         CourseName = "مادة الرياضيات 1",
                         GradeId = 1,
                     },
                     new Course
                     {
-                        CourseId = 2,
+                        Id = 2,
                         CourseName = "مادة الرياضيات 2",
                         GradeId = 2,
                     }

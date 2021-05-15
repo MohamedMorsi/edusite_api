@@ -11,9 +11,11 @@ namespace Dtos.Course
         public CourseCreateDto()
         {
         }
-        [Key]
-        public int CourseId { get; set; }
         public string CourseName { get; set; }
+        [Required]
+        public bool IsActive { get; set; }
+
+        /// //////////////////////////////////////////////////////////////
 
         public int GradeId { get; set; }
     }

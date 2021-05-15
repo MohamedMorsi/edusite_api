@@ -13,24 +13,24 @@ namespace Configurations
         public void Configure(EntityTypeBuilder<Grade> builder)
         {
             builder.ToTable("Grades");
-            //builder.Property(s => s.CreatedDate).HasDefaultValue(DateTime.Now).IsRequired(true);
+
 
             //seedData
             builder.HasData(
 
                     new Grade
                     {
-                        GradeId = 1,
+                        Id = 1,
                         GradeName = "الصف الأول الثانوى"
                     },
                     new Grade
                     {
-                        GradeId = 2,
+                        Id = 2,
                         GradeName = "الصف الثانى الثانوى"
                     },
                     new Grade
                     {
-                        GradeId = 3,
+                        Id = 3,
                         GradeName = "الصف الثالث الثانوى"
                     }
                 );

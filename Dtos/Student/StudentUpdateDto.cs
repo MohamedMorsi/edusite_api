@@ -17,8 +17,5 @@ namespace Dtos.Student
         public string MobilePhone2 { get; set; }
         public string UserEmail { get; set; }
         public bool IsActive { get; set; }
-        public string Password { get; set; }
-        public string PictureProfile { get; set; }
-        public int GradeId { get; set; }
     }
 }

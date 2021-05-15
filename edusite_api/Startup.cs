@@ -25,6 +25,8 @@ using edusite_api.Services.Contract;
 using edusite_api.Settings;
 using Models;
 using Microsoft.AspNetCore.Identity;
+using edusite_api.Repository;
+using edusite_api.Data.Contract;
 
 namespace Auth_API
 {
@@ -79,6 +81,11 @@ namespace Auth_API
 
             //Repositories
             //services.AddScoped<IAccountRepo, AccountRepo>();
+            services.AddScoped<ICategoryRepo, CategoryRepo>();
+            services.AddScoped<IPlanRepo, PlanRepo>();
+            services.AddScoped<ITeacherRepo, TeacherRepo>();
+            services.AddScoped<IGradeRepo, GradeRepo>();
+            services.AddScoped<ICourseRepo, CourseRepo>();
 
             //Microsoft.AspNetCore.Mvc.NewtonsoftJson  ===== to possible object cycle was detected which is not supported
             services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);

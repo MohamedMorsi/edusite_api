@@ -11,9 +11,8 @@ namespace Dtos.Grade
         public GradeCreateDto()
         {
         }
-        [Key]
-        public int GradeId { get; set; }
         public string GradeName { get; set; }
-
+        [Required]
+        public bool IsActive { get; set; }
     }
 }

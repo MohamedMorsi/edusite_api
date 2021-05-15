@@ -7,8 +7,6 @@ namespace Dtos.Student
 {
     public class StudentCreateDto
     {
-        [Key]
-        public int StudentId { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -17,8 +15,5 @@ namespace Dtos.Student
         public string MobilePhone2 { get; set; }
         public string UserEmail { get; set; }
         public bool IsActive { get; set; }
-        public string Password { get; set; }
-        public string PictureProfile { get; set; }
-        public int GradeId { get; set; }
     }
 }

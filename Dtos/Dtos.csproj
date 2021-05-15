@@ -5,15 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Student\**" />
-    <Compile Remove="Teacher\**" />
-    <EmbeddedResource Remove="Student\**" />
-    <EmbeddedResource Remove="Teacher\**" />
-    <None Remove="Student\**" />
-    <None Remove="Teacher\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 

@@ -7,18 +7,12 @@
   <ItemGroup>
     <Compile Remove="Repository\AccountRepo.cs" />
     <Compile Remove="Repository\Contract\IAccountRepo.cs" />
-    <Compile Remove="Repository\Contract\IStudentRepo.cs" />
-    <Compile Remove="Repository\Contract\ITeacherRepo.cs" />
-    <Compile Remove="Repository\StudentRepo.cs" />
-    <Compile Remove="Repository\TeacherRepo.cs" />
     <Compile Remove="Services\Contract\ILoginService.cs" />
     <Compile Remove="Services\Contract\ITokenService.cs" />
     <Compile Remove="Services\LoginService.cs" />
     <Compile Remove="Services\TokenService.cs" />
     <Compile Remove="Controllers\AccountsController.cs" />
     <Compile Remove="Controllers\LoginController.cs" />
-    <Compile Remove="Controllers\StudentsController.cs" />
-    <Compile Remove="Controllers\TeachersController.cs" />
     <Compile Remove="Settings\EncryptUtils.cs" />
     <Compile Remove="Settings\JwtSettings.cs" />
   </ItemGroup>
@@ -57,5 +51,21 @@
     <ProjectReference Include="..\Dtos\Dtos.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES2015</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 
 </Project>

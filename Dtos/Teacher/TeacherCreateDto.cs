@@ -7,18 +7,13 @@ namespace Dtos.Teacher
 {
     public class TeacherCreateDto
     {
-
-        [Key]
-        public int TeacherId { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
         public string MobilePhone { get; set; }
         public string MobilePhone2 { get; set; }
-        public string UserEmail { get; set; }
+        public string Email { get; set; }
         public bool IsActive { get; set; }
-        public string Password { get; set; }
-        public string PictureProfile { get; set; }
     }
 }

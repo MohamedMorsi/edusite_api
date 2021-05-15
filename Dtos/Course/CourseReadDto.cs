@@ -12,9 +12,14 @@ namespace Dtos.Course
         {
         }
         [Key]
-        public int CourseId { get; set; }
+        public int Id { get; set; }
         public string CourseName { get; set; }
+        [Required]
+        public bool IsActive { get; set; }
 
+        /// /////////////////////////////////////////////////////////////////////
         public int GradeId { get; set; }
+        public Dtos.Grade.GradeReadDto Grade { get; set; }
+
     }
 }

@@ -51,7 +51,7 @@ namespace edusite_api.Controllers
 
             var CourseReadDto = _mapper.Map<CourseReadDto>(CourseModel);
 
-            return CreatedAtRoute(nameof(GetCourseById), new { id = CourseReadDto.CourseId }, CourseReadDto);
+            return CreatedAtRoute(nameof(GetCourseById), new { id = CourseReadDto.Id }, CourseReadDto);
         }
 
         //put  api/Courses/5

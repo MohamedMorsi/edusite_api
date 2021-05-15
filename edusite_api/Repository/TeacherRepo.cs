@@ -53,7 +53,7 @@ namespace edusite_api.Repository
 
         public void UpdateTeacher(Teacher s)
         {
-            //nothing
+            _ctx.Update(s);
         }
 
     }

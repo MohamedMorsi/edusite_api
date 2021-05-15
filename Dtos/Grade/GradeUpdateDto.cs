@@ -12,7 +12,9 @@ namespace Dtos.Grade
         {
         }
         [Key]
-        public int GradeId { get; set; }
+        public int Id { get; set; }
         public string GradeName { get; set; }
+        [Required]
+        public bool IsActive { get; set; }
     }
 }

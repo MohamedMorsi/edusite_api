@@ -38,12 +38,12 @@ namespace edusite_api.Repository
 
         public IEnumerable<Course> GetAll()
         {
-            return _ctx.Courses.ToList();
+            return _ctx.Courses.Include(j => j.Grade).ToList();
         }
 
         public Course GetCourseById(int id)
         {
-            return _ctx.Courses.FirstOrDefault(s => s.CourseId == id);
+            return _ctx.Courses.Include(j => j.Grade).FirstOrDefault(s => s.Id == id);
         }
 
         public bool SaveChanges()
@@ -53,7 +53,7 @@ namespace edusite_api.Repository
 
         public void UpdateCourse(Course s)
         {
-            //nothing
+            _ctx.Update(s);
         }
 
     }

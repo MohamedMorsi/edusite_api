@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <Compile Remove="AccountConfiguration.cs" />
-    <Compile Remove="StudentConfiguration.cs" />
-    <Compile Remove="TeacherConfiguration.cs" />
   </ItemGroup>
 
   <ItemGroup>

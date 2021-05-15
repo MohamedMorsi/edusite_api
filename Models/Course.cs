@@ -11,19 +11,16 @@ namespace Models
     {
         public Course()
         {
-            //Students = new List<User>();
-            //Teachers = new List<User>();
         }
         [Key]
-        public int CourseId { get; set; }
+        public int Id { get; set; }
         public string CourseName { get; set; }
-
+        [Required]
+        public bool IsActive { get; set; }
 
         /// ////////////////////////////////////////////////////////////////////////////////
         public int GradeId { get; set; }
         public Grade Grade { get; set; }
-        //public virtual ICollection<User> Teachers { get; set; }
-        //public virtual ICollection<User> Students { get; set; }
 
     }
 }

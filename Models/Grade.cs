@@ -12,18 +12,16 @@ namespace Models
         public Grade()
         {
             Courses = new List<Course>();
-            //Teachers = new List<User>();
-            //Students = new List<User>();
         }
 
         [Key]
-        public int GradeId { get; set; }
+        public int Id { get; set; }
         public string GradeName { get; set; }
-
-
+        public int CoursesCount { get { return Courses.Count; } }
+        [Required]
+        public bool IsActive { get; set; }
+        /// ///////////////////////////////////////////////////////////////////
         public virtual ICollection<Course> Courses { get; set; }
-        //public virtual ICollection<User> Teachers { get; set; }
-        //public virtual ICollection<User> Students { get; set; }
 
     }
 }
