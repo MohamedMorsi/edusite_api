@@ -13,6 +13,9 @@ namespace Configurations
         public void Configure(EntityTypeBuilder<Student> builder)
         {
             builder.ToTable("Students");
+
+            builder.HasOne<Grade>(t => t.Grade).WithMany(c => c.Students).HasForeignKey(t => t.GradeId);
+
         }
     }
 }

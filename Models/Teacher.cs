@@ -11,9 +11,9 @@ namespace Models
     {
         public Teacher()
         {
-            //Students = new List<Student>();
-            //Courses = new List<Course>();
-            //Grades = new List<Grade>();
+            TeachersStudents = new List<TeachersStudents>();
+            TeachersCourses = new List<TeachersCourses>();
+            TeachersGrades = new List<TeachersGrades>();
         }
         [Key]
         public int TeacherId { get; set; }
@@ -26,9 +26,9 @@ namespace Models
         public string Email { get; set; }
         public bool IsActive { get; set; }
         //////////////////////////////////////////////////////////////////////////////////
-        //public virtual ICollection<Grade> Grades { get; set; }
-        //public virtual ICollection<Course> Courses { get; set; }
-        //public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<TeachersGrades> TeachersGrades { get; set; }
+        public virtual ICollection<TeachersCourses> TeachersCourses { get; set; }
+        public virtual ICollection<TeachersStudents> TeachersStudents { get; set; }
 
     }
 }

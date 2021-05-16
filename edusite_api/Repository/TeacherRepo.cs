@@ -38,12 +38,21 @@ namespace edusite_api.Repository
 
         public IEnumerable<Teacher> GetAll()
         {
-            return _ctx.Teachers.ToList();
+            return _ctx
+                .Teachers
+                .Include(a => a.TeachersGrades)
+                .Include(a => a.TeachersStudents)
+                .Include(a => a.TeachersCourses)
+                .ToList();
         }
 
         public Teacher GetTeacherById(int id)
         {
-            return _ctx.Teachers.FirstOrDefault(s => s.TeacherId == id);
+            return _ctx.Teachers
+                .Include(a => a.TeachersGrades)
+                .Include(a => a.TeachersCourses)
+                .Include(a => a.TeachersStudents)
+                .FirstOrDefault(s => s.TeacherId == id);
         }
 
         public bool SaveChanges()

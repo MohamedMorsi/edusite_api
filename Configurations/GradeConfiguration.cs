@@ -15,6 +15,8 @@ namespace Configurations
             builder.ToTable("Grades");
 
 
+
+
             //seedData
             builder.HasData(
 

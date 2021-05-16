@@ -313,6 +313,9 @@ namespace edusite_api.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<int>("GradeId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
@@ -333,7 +336,24 @@ namespace edusite_api.Migrations
 
                     b.HasKey("StudentId");
 
+                    b.HasIndex("GradeId");
+
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("Models.StudentsCourses", b =>
+                {
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("StudentId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("StudentsCourses");
                 });
 
             modelBuilder.Entity("Models.Teacher", b =>
@@ -375,6 +395,51 @@ namespace edusite_api.Migrations
                     b.HasKey("TeacherId");
 
                     b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("Models.TeachersCourses", b =>
+                {
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TeacherId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("TeachersCourses");
+                });
+
+            modelBuilder.Entity("Models.TeachersGrades", b =>
+                {
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GradeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TeacherId", "GradeId");
+
+                    b.HasIndex("GradeId");
+
+                    b.ToTable("TeachersGrades");
+                });
+
+            modelBuilder.Entity("Models.TeachersStudents", b =>
+                {
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TeacherId", "StudentId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("TeachersStudents");
                 });
 
             modelBuilder.Entity("Models.User", b =>
@@ -555,9 +620,123 @@ namespace edusite_api.Migrations
                     b.Navigation("Grade");
                 });
 
+            modelBuilder.Entity("Models.Student", b =>
+                {
+                    b.HasOne("Models.Grade", "Grade")
+                        .WithMany("Students")
+                        .HasForeignKey("GradeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grade");
+                });
+
+            modelBuilder.Entity("Models.StudentsCourses", b =>
+                {
+                    b.HasOne("Models.Course", "Course")
+                        .WithMany("StudentsCourses")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.Student", "Student")
+                        .WithMany("StudentsCourses")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("Models.TeachersCourses", b =>
+                {
+                    b.HasOne("Models.Course", "Course")
+                        .WithMany("TeachersCourses")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.Teacher", "Teacher")
+                        .WithMany("TeachersCourses")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("Models.TeachersGrades", b =>
+                {
+                    b.HasOne("Models.Grade", "Grade")
+                        .WithMany("TeachersGrades")
+                        .HasForeignKey("GradeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.Teacher", "Teacher")
+                        .WithMany("TeachersGrades")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grade");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("Models.TeachersStudents", b =>
+                {
+                    b.HasOne("Models.Student", "Student")
+                        .WithMany("TeachersStudents")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Models.Teacher", "Teacher")
+                        .WithMany("TeachersStudents")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Student");
+
+                    b.Navigation("Teacher");
+                });
+
+            modelBuilder.Entity("Models.Course", b =>
+                {
+                    b.Navigation("StudentsCourses");
+
+                    b.Navigation("TeachersCourses");
+                });
+
             modelBuilder.Entity("Models.Grade", b =>
                 {
                     b.Navigation("Courses");
+
+                    b.Navigation("Students");
+
+                    b.Navigation("TeachersGrades");
+                });
+
+            modelBuilder.Entity("Models.Student", b =>
+                {
+                    b.Navigation("StudentsCourses");
+
+                    b.Navigation("TeachersStudents");
+                });
+
+            modelBuilder.Entity("Models.Teacher", b =>
+                {
+                    b.Navigation("TeachersCourses");
+
+                    b.Navigation("TeachersGrades");
+
+                    b.Navigation("TeachersStudents");
                 });
 #pragma warning restore 612, 618
         }

@@ -20,7 +20,10 @@ namespace edusite_api.Data
         public DbSet<Plan> Plans { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Student> Students { get; set; }
-        //public DbSet<GradesCourses> GradesCourses { get; set; }
+        public DbSet<TeachersGrades> TeachersGrades { get; set; }
+        public DbSet<TeachersCourses> TeachersCourses { get; set; }
+        public DbSet<StudentsCourses> StudentsCourses { get; set; }
+        public DbSet<TeachersStudents> TeachersStudents { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -39,8 +42,11 @@ namespace edusite_api.Data
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new PlanConfiguration());
             modelBuilder.ApplyConfiguration(new TeacherConfiguration());
+            modelBuilder.ApplyConfiguration(new TeachersGradesConfiguration());
+            modelBuilder.ApplyConfiguration(new TeachersCoursesConfiguration());
             modelBuilder.ApplyConfiguration(new StudentConfiguration());
-            //modelBuilder.ApplyConfiguration(new GradesCoursesConfiguration());
+            modelBuilder.ApplyConfiguration(new StudentsCoursesConfiguration());
+            modelBuilder.ApplyConfiguration(new TeachersStudentsConfiguration());
         }
     }
 }

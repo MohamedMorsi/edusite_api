@@ -17,5 +17,7 @@ namespace Dtos.Teacher
         public string MobilePhone2 { get; set; }
         public string Email { get; set; }
         public bool IsActive { get; set; }
+        //////////////////////////////////////////////////////////////////////////////////
+        public virtual ICollection<Dtos.TeachersGrades.TeachersGradesReadDto> TeachersGrades { get; set; }
     }
 }

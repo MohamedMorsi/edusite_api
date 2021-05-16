@@ -12,6 +12,8 @@ namespace Models
         public Grade()
         {
             Courses = new List<Course>();
+            Students = new List<Student>();
+            TeachersGrades = new List<TeachersGrades>();
         }
 
         [Key]
@@ -21,7 +23,9 @@ namespace Models
         [Required]
         public bool IsActive { get; set; }
         /// ///////////////////////////////////////////////////////////////////
+        public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<TeachersGrades> TeachersGrades { get; set; }
 
     }
 }

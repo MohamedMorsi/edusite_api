@@ -11,6 +11,8 @@ namespace Models
     {
         public Course()
         {
+            TeachersCourses = new List<TeachersCourses>();
+            StudentsCourses = new List<StudentsCourses>();
         }
         [Key]
         public int Id { get; set; }
@@ -21,6 +23,9 @@ namespace Models
         /// ////////////////////////////////////////////////////////////////////////////////
         public int GradeId { get; set; }
         public Grade Grade { get; set; }
+
+        public virtual ICollection<TeachersCourses> TeachersCourses { get; set; }
+        public virtual ICollection<StudentsCourses> StudentsCourses { get; set; }
 
     }
 }
