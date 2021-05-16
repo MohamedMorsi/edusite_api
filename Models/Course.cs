@@ -17,6 +17,8 @@ namespace Models
         [Key]
         public int Id { get; set; }
         public string CourseName { get; set; }
+        public int TeachersCoursesCount { get { return TeachersCourses.Count; } }
+        public int StudentsCoursesCount { get { return StudentsCourses.Count; } }
         [Required]
         public bool IsActive { get; set; }
 

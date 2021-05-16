@@ -19,12 +19,14 @@ namespace Models
         [Key]
         public int Id { get; set; }
         public string GradeName { get; set; }
+        public int StudentsCount { get { return Students.Count; } }
         public int CoursesCount { get { return Courses.Count; } }
+        public int TeachersGradesCount { get { return TeachersGrades.Count; } }
         [Required]
         public bool IsActive { get; set; }
         /// ///////////////////////////////////////////////////////////////////
-        public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
         public virtual ICollection<TeachersGrades> TeachersGrades { get; set; }
 
     }
