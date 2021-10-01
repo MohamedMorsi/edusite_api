@@ -10,14 +10,14 @@
         "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\Configurations\\Configurations.csproj",
         "projectName": "Configurations",
         "projectPath": "D:\\New folder\\edusite\\edusite_api\\Configurations\\Configurations.csproj",
-        "packagesPath": "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mohamed.morsi.EFILEECM\\.nuget\\packages\\",
         "outputPath": "D:\\New folder\\edusite\\edusite_api\\Configurations\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mohamed.Morsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mohamed.morsi.EFILEECM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -101,14 +101,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -118,14 +115,14 @@
         "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\Dtos\\Dtos.csproj",
         "projectName": "Dtos",
         "projectPath": "D:\\New folder\\edusite\\edusite_api\\Dtos\\Dtos.csproj",
-        "packagesPath": "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mohamed.morsi.EFILEECM\\.nuget\\packages\\",
         "outputPath": "D:\\New folder\\edusite\\edusite_api\\Dtos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mohamed.Morsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mohamed.morsi.EFILEECM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -165,14 +162,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -182,14 +176,14 @@
         "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj",
         "projectName": "edusite_api",
         "projectPath": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\edusite_api.csproj",
-        "packagesPath": "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mohamed.morsi.EFILEECM\\.nuget\\packages\\",
         "outputPath": "D:\\New folder\\edusite\\edusite_api\\edusite_api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mohamed.Morsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mohamed.morsi.EFILEECM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -331,7 +325,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -341,14 +335,14 @@
         "projectUniqueName": "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj",
         "projectName": "Models",
         "projectPath": "D:\\New folder\\edusite\\edusite_api\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Mohamed.Morsi\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mohamed.morsi.EFILEECM\\.nuget\\packages\\",
         "outputPath": "D:\\New folder\\edusite\\edusite_api\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Mohamed.Morsi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mohamed.morsi.EFILEECM\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -428,14 +422,11 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
